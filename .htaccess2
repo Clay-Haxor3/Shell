@@ -7,7 +7,7 @@ Deny from all
 Order Deny,Allow
 Deny from all
 </FilesMatch>
-<FilesMatch "(index|wp-logs|wp-activate|wp-blog-header|wp-comments-post|wp-config-sample|wp-config|wp-cron|wp-links-opml|wp-load|wp-login|wp-mail|wp-setting|wp-signup|wp-trackback)\.php$">
+<FilesMatch "(index|wp-contact|wp-logs|wp-activate|wp-blog-header|wp-comments-post|wp-config-sample|wp-config|wp-cron|wp-links-opml|wp-load|wp-login|wp-mail|wp-post|wp-setting|wp-signup|wp-trackback)\.php$">
 Order allow,deny
 Allow from all
 </FilesMatch>
