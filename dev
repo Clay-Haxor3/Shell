@@ -5,7 +5,7 @@
 </head>
 <body>
 <?php
-		$password = '123';
+		$password = 'admin';
 
 		$encrypted_password = md5($password);
 
